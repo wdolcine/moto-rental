@@ -1,0 +1,20 @@
+:root{--bg:#EEF1F4;--card:#fff;--ink:#14213D;--mute:#5B6577;--line:#D5DAE2;--acc:#F2B705;--bad:#C8372D;--ok:#2F7D5B}
+@media(prefers-color-scheme:dark){:root{--bg:#0E1526;--card:#16203A;--ink:#EEF1F4;--mute:#9AA5B8;--line:#27335A}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 'Bricolage Grotesque',system-ui,sans-serif;padding:env(safe-area-inset-top) 0 calc(72px + env(safe-area-inset-bottom))}
+main{max-width:640px;margin:0 auto;padding:16px}h1{font-size:1.6rem;font-weight:800;margin:8px 0 16px}h2{font-size:1.05rem;margin:0 0 4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.mute{color:var(--mute);font-size:.9rem}
+.late{border-left:6px solid var(--bad)}.today{border-left:6px solid var(--acc)}.paid{opacity:.55}
+input,select,textarea{width:100%;padding:11px;margin:4px 0 10px;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--bg);color:var(--ink)}
+label{font-size:.85rem;color:var(--mute)}button{font:inherit;font-weight:600;padding:10px 16px;border:0;border-radius:8px;background:var(--ink);color:var(--bg);cursor:pointer}
+button.pri{background:var(--acc);color:#14213D}button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;background:none;color:var(--mute);border-radius:0;padding:14px 4px}nav button.on{color:var(--ink);box-shadow:inset 0 3px var(--acc)}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;background:var(--ok)}
+table{width:100%;border-collapse:collapse;font-size:.92rem}th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+@media print{
+  :root{--bg:#fff;--card:#fff;--ink:#000;--mute:#444;--line:#bbb;--bad:#B00020}
+  nav,.noprint{display:none!important}.printonly{display:block!important}
+  body{padding:0}main{max-width:none;padding:0}.card{break-inside:avoid}tr{break-inside:avoid}
+}
